@@ -27,7 +27,6 @@ h1 {
 @media only screen and (min-width: 35em) {
   h1 {
     font-size: 7em;
-    margin: 2em 4rem 1em;
   }
 }
 
@@ -124,13 +123,13 @@ section {
 
 /* Footer Styles */
 .page__footer {
-  background: #000;
+  background:#bbbbbb;
   padding: 3em;
   color: #fff;
 }
 
 .page__footer p {
-  color: #fff;
+  color: #000000;
 }
 
 /* ---- Theme Rules ---- */
@@ -160,7 +159,12 @@ img {
 
 .hero__image{
   width: 100%;
-  
+}
+
+.image__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Background Circles */
