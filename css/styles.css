@@ -21,7 +21,7 @@ h1 {
   font-size: 3em;
   /* margin: 1em 1rem; */
   text-align: center;
-  color:#ededed;
+  color: #ededed;
 }
 
 @media only screen and (min-width: 35em) {
@@ -34,7 +34,7 @@ h2 {
   /* border-bottom: 1px solid #cc1; */
   font-family: "Oxygen", Sans-Serif;
   font-size: 3em;
-  color:#000000;
+  color: #000000;
 }
 h3 {
   font-family: "Oxygen", Sans-Serif;
@@ -43,18 +43,18 @@ h3 {
   color: #ededed;
 }
 
-.main__hero{
+.main__hero {
   position: relative;
   width: 100%;
 }
 
-.main__hero__text{
+.main__hero__text {
   position: absolute;
 }
 
 p {
   line-height: 1.6em;
-  color:#000000
+  color: #000000;
 }
 
 /* ---- Layout Rules ---- */
@@ -88,10 +88,24 @@ section {
 }
 
 /* Navigation Styles*/
+.navbar__menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#navbar__list {
+  display: flex;
+  flex-direction: column;
+}
+
 .navbar__menu ul {
-  padding-left: 0;
-  margin: 0;
+  padding: 10px;
   text-align: right;
+}
+
+.navbar__menu a {
+  text-decoration: none;
 }
 
 .navbar__menu li {
@@ -112,6 +126,14 @@ section {
   transition: ease 0.3s all;
 }
 
+.menu__icon {
+  padding: 10px;
+  display: flex;
+  position: absolute;
+  right: 10px;
+  position: fixed;
+}
+
 /* Header Styles */
 .page__header {
   background: #fff;
@@ -123,7 +145,7 @@ section {
 
 /* Footer Styles */
 .page__footer {
-  background:#bbbbbb;
+  background: #bbbbbb;
   padding: 3em;
   color: #fff;
 }
@@ -154,17 +176,28 @@ section:nth-of-type(even) .landing__container {
 }
 
 img {
+  padding: 10px;
   max-width: 100%;
 }
 
-.hero__image{
+.hero__image {
   width: 100%;
 }
 
-.image__container{
+.home {
+  padding: 10px;
+  background-color: #bbbbbb;
+}
+
+.image__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+section.your-active-class {
+  background: #ffffff;
+  background: linear-gradient(0deg, #ffffff 0%, #ffffff 100%);
 }
 
 /* Background Circles */
