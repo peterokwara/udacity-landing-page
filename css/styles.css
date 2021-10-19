@@ -100,7 +100,7 @@ section {
 }
 
 #navbar__list {
-  display: flex;
+  display: none;
   flex-direction: column;
 }
 
