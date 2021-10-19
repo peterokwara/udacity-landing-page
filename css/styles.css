@@ -46,14 +46,20 @@ h3 {
     position: relative;
   }
   h3 {
-    font-size: 4em;
+    font-size: 2em;
   }
   .main__hero__text {
     position: absolute;
     text-align: center;
     left: 0;
-    top: 300px;
+    top: 200px;
     width: 100%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .main__hero__text {
+    top: 10px;
   }
 }
 
