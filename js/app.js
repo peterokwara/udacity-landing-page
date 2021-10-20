@@ -1,4 +1,6 @@
-// function to run when a html webpage finishes to load
+/**
+ * Check if the html webpage has finished loading before running any function
+ */
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
 
@@ -12,7 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
   activeSection();
 });
 
-// function to loop through the section elements and start building the navigation menu
+/**
+ * Loop through all the sections and start building the navigation menu
+ * @param  sections all the sections found within the html webpage
+ * @returns 
+ */
 const navigation = (sections) => {
   for (const section of sections) {
     const sectionName = section.dataset.nav;
@@ -20,13 +26,17 @@ const navigation = (sections) => {
   }
 };
 
-// function that defines what happens when the menu is clicked
+/**
+ * Add an eventClick listener to the menu icon
+ */
 const addClickEventListener = () => {
   const hamburgerMenu = document.getElementById("menu__icon");
   hamburgerMenu.addEventListener("click", menuAction);
 };
 
-// function to higlight the current active section
+/**
+ * Highlight the current active section
+ */
 const activeSection = () => {
   const sections = document.querySelectorAll("section");
 
@@ -41,7 +51,10 @@ const activeSection = () => {
   });
 };
 
-// helper function to build the navigation menu
+/**
+ * Build the navigation menu
+ * @param sectionName A single section within a html webpage
+ */
 const createNavigation = (sectionName) => {
   let navBar = document.createElement(`a`);
 
@@ -56,7 +69,9 @@ const createNavigation = (sectionName) => {
   currentDiv.appendChild(navBar);
 };
 
-// helper function to hide or display the menu items in the hamburger menu
+/**
+ * Display or hide the menu bar based on whether the hamburger menu is clicked or not
+ */
 const menuAction = () => {
   const navbar = document.getElementById("navbar__list");
   if (navbar.style.display === "flex") {
@@ -66,7 +81,9 @@ const menuAction = () => {
   }
 };
 
-// helper function to remove a class from a set of elements
+/**
+ * Remove a class from a set of elements
+ */
 const removeActiveClass = () => {
   const sections = document.querySelectorAll("section");
   for (const section of sections) {
@@ -74,7 +91,10 @@ const removeActiveClass = () => {
   }
 };
 
-// helper function to add a class to a specific element
+/**
+ * Add a class to an element
+ * @param section The section to add a class
+ */
 const addActiveClass = (section) => {
   section.classList.add(`your-active-class`);
 };
