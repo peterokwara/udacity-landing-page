@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // build the navigation
   navigation(sections);
 
-  // add a click event listener to the hamburger menu icon
-  addClickEventListener();
+  // add a click event listener to the menu items
+  addMenuEventListener();
 
   // highlight the current active section
   activeSection();
@@ -27,11 +27,22 @@ const navigation = (sections) => {
 };
 
 /**
- * Add an eventClick listener to the menu icon
+ * Add an eventClick listener to the menu icon and to the menu list
  */
-const addClickEventListener = () => {
+const addMenuEventListener = () => {
   const hamburgerMenu = document.getElementById("menu__icon");
+  const menuLists = document.querySelectorAll("li");
+
   hamburgerMenu.addEventListener("click", menuAction);
+  for (const menuList of menuLists) {
+    // navigate to the section when clicked
+    menuList.addEventListener("click", () => {
+      const section = document.querySelector(`[data-nav='${menuList.id}']`);
+      if (section) {
+        section.scrollIntoView();
+      }
+    });
+  }
 };
 
 /**
@@ -70,7 +81,6 @@ const createNavigation = (sectionName) => {
   // add section name to the content of the navigation bar, together with the attribute
   let newContent = document.createTextNode(sectionName);
   navBarContent.appendChild(newContent);
-  navBarContent.setAttribute("href", `#${sectionName}`);
 
   // add the a tag to the ordered list as a child
   navBar.appendChild(navBarContent);
