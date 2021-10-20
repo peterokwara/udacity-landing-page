@@ -39,7 +39,7 @@ const addMenuEventListener = () => {
     menuList.addEventListener("click", () => {
       const section = document.querySelector(`[data-nav='${menuList.id}']`);
       if (section) {
-        section.scrollIntoView();
+        section.scrollIntoView({ behavior: "smooth" });
       }
     });
   }
