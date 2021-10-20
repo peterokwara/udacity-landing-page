@@ -39,13 +39,17 @@ const addClickEventListener = () => {
  */
 const activeSection = () => {
   const sections = document.querySelectorAll("section");
-
+  let list;
   window.addEventListener("scroll", () => {
     for (const section of sections) {
       const box = section.getBoundingClientRect();
       if (box.top < window.innerHeight && box.bottom >= 0) {
         removeActiveClass();
-        addActiveClass(section);
+
+        // get the name of the section
+        list = section.dataset.nav;
+
+        addActiveClass(section, list);
       }
     }
   });
@@ -58,6 +62,7 @@ const activeSection = () => {
 const createNavigation = (sectionName) => {
   // create an ordered list
   let navBar = document.createElement("li");
+  navBar.setAttribute("id", `${sectionName}`);
 
   // create an a tag
   let navBarContent = document.createElement(`a`);
@@ -88,12 +93,17 @@ const menuAction = () => {
 };
 
 /**
- * Remove a class from a set of elements
+ * Remove a class from a set of section elements
  */
 const removeActiveClass = () => {
   const sections = document.querySelectorAll("section");
+  const lists = document.querySelectorAll("li");
   for (const section of sections) {
     section.classList.remove(`your-active-class`);
+  }
+
+  for (const list of lists) {
+    list.classList.remove(`your-active-class`);
   }
 };
 
@@ -101,6 +111,10 @@ const removeActiveClass = () => {
  * Add a class to an element
  * @param section The section to add a class
  */
-const addActiveClass = (section) => {
+const addActiveClass = (section, listName) => {
   section.classList.add(`your-active-class`);
+
+  // with list name, get the element with list name and apply class
+  const list = document.getElementById(listName);
+  list.classList.add("your-active-class");
 };
