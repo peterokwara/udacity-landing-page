@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /**
  * Loop through all the sections and start building the navigation menu
  * @param  sections all the sections found within the html webpage
- * @returns 
+ * @returns
  */
 const navigation = (sections) => {
   for (const section of sections) {
@@ -56,16 +56,22 @@ const activeSection = () => {
  * @param sectionName A single section within a html webpage
  */
 const createNavigation = (sectionName) => {
-  let navBar = document.createElement(`a`);
+  // create an ordered list
+  let navBar = document.createElement("li");
 
+  // create an a tag
+  let navBarContent = document.createElement(`a`);
+
+  // add section name to the content of the navigation bar, together with the attribute
   let newContent = document.createTextNode(sectionName);
+  navBarContent.appendChild(newContent);
+  navBarContent.setAttribute("href", `#${sectionName}`);
 
-  navBar.appendChild(newContent);
+  // add the a tag to the ordered list as a child
+  navBar.appendChild(navBarContent);
 
-  navBar.setAttribute("href", `#${sectionName}`);
-
+  // add the built up navigation to the unordered list
   let currentDiv = document.getElementById("navbar__list");
-
   currentDiv.appendChild(navBar);
 };
 
