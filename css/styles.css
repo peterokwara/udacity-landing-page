@@ -183,7 +183,14 @@ section {
 section:nth-of-type(even) .landing__container {
   margin-right: 0;
   margin-left: auto;
+  text-align: left;
+}
+
+section:nth-of-type(odd) .landing__container {
+  margin-right: 0;
+  margin-left: auto;
   text-align: right;
+  flex-direction: row-reverse;
 }
 
 img {
